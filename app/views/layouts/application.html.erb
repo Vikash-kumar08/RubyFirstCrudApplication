@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
+<style>
+    table, th, td {
+        border:2px solid black;
+    }
+    h {
+        padding-bottom: 4rem;
+        margin-left: 300px;
+    }
+
+    h1 {
+        padding-top: 1rem;
+        margin-left: 300px;
+    }
+    div {
+        color: darkgreen;
+    }
+
+
+</style>
+
+
   <head>
     <title>ProjectRb</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  <div>
   <% flash.each do |name, msg| %>
     <%= msg %>
     <br/>
     <br/>
   <% end %>
+  </div>
 
-
-    <%= yield %>
+  <%= yield %>
   </body>
 </html>
