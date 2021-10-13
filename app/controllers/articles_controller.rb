@@ -12,26 +12,19 @@
             end
 
 
-
-
               def create
                 #render plain: params[:article]
                 @article = Article.new(article_params)
-                phone_number = @article.phone_number
-                if validates_phone_number(get_digits(phone_number))
+                #phone_number = @article.phone_number
+                # if validates_phone_number(get_digits(phone_number))
                 if @article.save!
                     flash[:notice] = "Article was created successfully."
                     redirect_to article_path(@article.id)
                 else
                   render 'new'
                 end
-                else
-                  flash[:notice] = "Please enter valid phone number"
-                  render 'new'
-                  end
+
               end
-
-
 
                def edit
                  @article = Article.find(params[:id])
@@ -43,8 +36,8 @@
                   current_time = Time.zone.now.to_i
                   created_at = @article.created_at.to_i
                   t1= ((current_time - created_at)/1.hours).round.modulo(24)
-                  t2 = (validates_phone_number(get_digits(phone_number)))
-                  if (t1 < 12) && (t2 == true)
+                  # t2 = (validates_phone_number(get_digits(phone_number)))
+                  if (t1 < 12)
                     if @article.update(article_params)
                       flash[:notice] = "Article was updated successfully."
                       flag = 1
@@ -55,8 +48,8 @@
                     end
                   end
                   if flag != 1
-                    flash[:notice] = "Sorry you cannot update data within 24hrs. Please wait! or Might be phone-number invalid"
-                    redirect_to articles_path
+                    flash[:notice] = "Sorry you cannot update data under 24hrs. Please wait!"
+                    render 'edit'
                     end
                 end
 
@@ -73,12 +66,12 @@
               params.require(:article).permit(:title, :description, :phone_number, :created_at, :updated_at)
             end
 
-              def get_digits(x)
+              def get_digits(phone)
                 digits = Array.new
-                while x!=0
-                  r= (x % 10)
+                while phone!=0
+                  r= (phone % 10)
                   digits.push(r)
-                  x = x/10
+                  phone = phone/10
                 end
                 return (digits.reverse)
               end
