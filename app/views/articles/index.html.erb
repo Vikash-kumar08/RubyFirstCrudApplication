@@ -1,7 +1,7 @@
 <h><strong> Articles Listing Page </strong> </h>
 <br/>
 <br/>
-<button><%= link_to 'Create New Article', new_article_path %></button>
+<%= link_to '<i class="glyphicon glyphicon-plus"></i> Create New Article'.html_safe, new_article_path, class: 'btn btn-default' %>
 <br/>
 <br/>
 <table>
@@ -28,7 +28,7 @@
 
      <td><%= link_to '<i class="glyphicon glyphicon-eye-open"></i>'.html_safe, article_path(article.id), class: 'btn btn-default' %></td>
      <td><%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_article_path(article.id), class: 'btn btn-default' %></td>
-     <td><%= link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, article_path(article.id), method: :delete, class: 'btn btn-default',data: {confirm: "Are you sure?"} %></td>
+     <td><%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, article_path(article.id), method: :delete, class: 'btn btn-default',data: {confirm: "Are you sure?"} %></td>
    </tr>
    <% end %>
   </tbody>
