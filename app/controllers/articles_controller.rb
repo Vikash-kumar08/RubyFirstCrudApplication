@@ -17,6 +17,7 @@
                 @article = Article.new(article_params)
                 #phone_number = @article.phone_number
                 # if validates_phone_number(get_digits(phone_number))
+
                 if @article.save!
                     flash[:notice] = "Article was created successfully."
                     redirect_to article_path(@article.id)
@@ -37,7 +38,7 @@
                   created_at = @article.created_at.to_i
                   t1= ((current_time - created_at)/1.hours).round.modulo(24)
                   # t2 = (validates_phone_number(get_digits(phone_number)))
-                  if (t1 < 12)
+                  if (t1 < 24)
                     if @article.update(article_params)
                       flash[:notice] = "Article was updated successfully."
                       flag = 1
@@ -48,7 +49,7 @@
                     end
                   end
                   if flag != 1
-                    flash[:notice] = "Sorry you cannot update data under 24hrs. Please wait!"
+                    flash[:notice] = "Sorry you cannot update data which created before 24hrs"
                     render 'edit'
                     end
                 end

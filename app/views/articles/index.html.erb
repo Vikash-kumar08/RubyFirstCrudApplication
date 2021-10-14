@@ -1,6 +1,9 @@
 <h><strong> Articles Listing Page </strong> </h>
 <br/>
 <br/>
+<button><%= link_to 'Create New Article', new_article_path %></button>
+<br/>
+<br/>
 <table>
   <thead>
   <tr>
@@ -23,9 +26,9 @@
      <td><%= article.created_at.to_date %></td>
      <td><%= article.updated_at.to_date %></td>
 
-     <td> <%= link_to 'Show', article_path(article.id) %></td>
-     <td> <%= link_to 'Edit', edit_article_path(article.id) %></td>
-    <td> <%= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: "Are you sure?"} %></td>
+     <td> <button><%= link_to 'Show', article_path(article.id) %></button></td>
+     <td> <button><%= link_to 'Edit', edit_article_path(article.id) %></button></td>
+    <td> <button><%= link_to 'Delete', article_path(article.id), method: :delete, data: {confirm: "Are you sure?"} %></button></td>
    </tr>
    <% end %>
   </tbody>
@@ -33,5 +36,3 @@
 
 <br/>
 <br/>
-
-<%= link_to 'Create New Article', new_article_path %>
