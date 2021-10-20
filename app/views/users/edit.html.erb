@@ -1,0 +1,30 @@
+<% if @user.errors.any? %>
+  <h2>The following errors prevented the user from being edit</h2>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_with(model: @user, local: true) do |f| %>
+
+  <p>
+    <%= f.label :username %><br/>
+    <%= f.text_field :username%>
+  </p>
+
+  <p>
+    <%= f.label :email %><br/>
+    <%= f.text_field :email %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
+<br/>
+<br/>
+<%= link_to 'Cancel and return to users listing', users_path %>

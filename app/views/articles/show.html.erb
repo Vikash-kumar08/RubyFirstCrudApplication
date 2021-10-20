@@ -7,7 +7,7 @@
 <p><strong>PhoneNumber: </strong><%= @article.phone_number %></p>
 <p><strong>Created_at: </strong><%= @article.created_at %></p>
 <p><strong>Updated_at: </strong><%= @article.updated_at %></p>
-
+<p><strong>User_id: </strong><%= @article.user_id %></p>
 
 <%= link_to '<i class="glyphicon glyphicon-pencil"></i>'.html_safe, edit_article_path(@article.id), class: 'btn btn-default' %> |
 <%= link_to '<i class="glyphicon glyphicon-trash"></i>'.html_safe, article_path(@article.id), method: :delete, class: 'btn btn-default',data: {confirm: "Are you sure?"} %> |

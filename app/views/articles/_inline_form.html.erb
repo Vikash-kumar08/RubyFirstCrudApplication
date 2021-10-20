@@ -8,7 +8,7 @@
 <% end %>
 
 
-<%= form_with(model: @article, local: true) do |f| %>
+<%= form_with(model: @article, local: true, id: dom_id(@article.id, 'inline_form')) do |f| %>
 
   <p>
     <%= f.label :title %><br/>
@@ -26,17 +26,7 @@
   </p>
 
   <p>
-    <%= f.label :user_id %><br/>
-    <%= f.number_field :user_id %>
-  </p>
-
-
-
-  <p>
     <%= f.submit %>
   </p>
 
 <% end %>
-<br/>
-<br/>
-<%= link_to 'Cancel and return to articles listing', articles_path %>

@@ -64,7 +64,7 @@
               end
             private
             def article_params
-              params.require(:article).permit(:title, :description, :phone_number, :created_at, :updated_at)
+              params.require(:article).permit(:title, :description, :phone_number, :created_at, :updated_at, :user_id)
             end
 
               def get_digits(phone)

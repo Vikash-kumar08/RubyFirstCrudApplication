@@ -30,7 +30,7 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
+    <link href="bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -47,5 +47,6 @@
   </div>
 
   <%= yield %>
+  <script src="bootstrap-editable/js/bootstrap-editable.js"></script>
   </body>
 </html>
