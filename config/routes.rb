@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
   get 'users/:id/articles' => 'users#articles', :as => :user_articles
+  # get '/' => 'pages#form1'
+
 
 end

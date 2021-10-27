@@ -6,17 +6,28 @@
         margin-right: 0px;
         margin-top: 0px;
     }
-    span1 {
+    /*span1 {*/
+    /*    margin-left: 100px;*/
+    /*    margin-top: -30px;*/
+    /*    color: #EFEFEF;*/
+    /*    text-align: justify-all;*/
+    /*    font-size: medium;*/
+    /*}*/
+    .heading {
+        margin-bottom: 100px;
         margin-left: 100px;
-        margin-top: -30px;
+        /*margin-top: -10px;*/
         color: #EFEFEF;
-        text-align: justify-all;
+        text-align: center;
         font-size: medium;
+        content: normal;
     }
+
     .form-inline {
-        margin-top: -40px;
-        margin-left: 700px;
-        margin-bottom: -20px;
+        margin-top: -32px;
+        margin-left: 780px;
+        margin-bottom: -30px;
+        /*font-size: 2px;*/
     }
     span {
         margin-left: -250px;
@@ -25,7 +36,7 @@
         color: #EFEFEF;
     }
     span2 {
-        margin-left: 1080px;
+        margin-left: 1120px;
         margin-bottom: 100px;
         margin-top: 10px;
         color: #EFEFEF;
@@ -33,13 +44,14 @@
         font-size: medium;
     }
     .glyphicon.glyphicon-menu-hamburger{
-        font-size: xx-large;
+        font-size: large;
         margin-top: 15px;
         margin-bottom: -10px;
+        color: #EFEFEF;
     }
 
     .glyphicon.glyphicon-user{
-        font-size: xx-large;
+        font-size: large;
         margin-top: -10px;
         color: #EFEFEF;
 
@@ -47,8 +59,8 @@
 
 </style>
 <nav class="navbar navbar-light bg-light">
-  <span1> Bharatiya Janta Party</span1>
-  <span><%= link_to '<i class="glyphicon glyphicon-menu-hamburger"></i>'.html_safe, new_article_path, class: 'btn btn-default' %></span>
+  <span1 class="heading"> Bharatiya Janta Party</span1>
+  <span><%= link_to '<i class="glyphicon glyphicon-menu-hamburger"></i>'.html_safe, articles_path %></span>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search by name or phone no" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="glyphicon glyphicon-search"></i></button>
