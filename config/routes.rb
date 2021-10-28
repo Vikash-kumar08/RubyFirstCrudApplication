@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
   get 'users/:id/articles' => 'users#articles', :as => :user_articles
-  # get '/' => 'pages#form1'
+  get '/' => 'pages#form1'
+  get 'articles/new/:id' => 'articles#new', :as => :new_article_creation
 
 
 end
