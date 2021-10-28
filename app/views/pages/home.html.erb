@@ -25,7 +25,7 @@
 
     .form-inline {
         margin-top: -32px;
-        margin-left: 780px;
+        margin-left: 850px;
         margin-bottom: -30px;
         /*font-size: 2px;*/
     }
@@ -36,7 +36,7 @@
         color: #EFEFEF;
     }
     span2 {
-        margin-left: 1120px;
+        margin-left: 1150px;
         margin-bottom: 100px;
         margin-top: 10px;
         color: #EFEFEF;
@@ -56,11 +56,10 @@
         color: #EFEFEF;
 
     }
-
 </style>
 <nav class="navbar navbar-light bg-light">
   <span1 class="heading"> Bharatiya Janta Party</span1>
-  <span><%= link_to '<i class="glyphicon glyphicon-menu-hamburger"></i>'.html_safe, articles_path %></span>
+  <span><%= link_to '<i class="glyphicon glyphicon-menu-hamburger"></i>'.html_safe, articles_path%></span>
   <form class="form-inline">
     <input class="form-control mr-sm-2" type="search" placeholder="Search by name or phone no" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="glyphicon glyphicon-search"></i></button>
@@ -68,4 +67,3 @@
   <span2> vikash kumar <%= link_to '<i class="glyphicon glyphicon-user"></i>'.html_safe, users_path %> </span2>
 </nav>
 <!--<h1><%#= link_to 'Articles listing', articles_path %></h1>-->
-

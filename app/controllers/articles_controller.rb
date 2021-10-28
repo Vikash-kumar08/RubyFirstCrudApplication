@@ -1,4 +1,5 @@
           class ArticlesController < ApplicationController
+            $x = 0
             def show
               @article = Article.find(params[:id])
             end
@@ -9,12 +10,14 @@
 
             def new
               @article = Article.new
+              $x = params[:id]
             end
 
 
               def create
                 #render plain: params[:article]
                 @article = Article.new(article_params)
+                @article.user_id = $x
                 #phone_number = @article.phone_number
                 # if validates_phone_number(get_digits(phone_number))
 
@@ -64,7 +67,7 @@
               end
             private
             def article_params
-              params.require(:article).permit(:title, :description, :phone_number, :created_at, :updated_at, :user_id)
+              params.require(:article).permit(:title, :description, :phone_number, :created_at, :updated_at,:user_id)
             end
 
               def get_digits(phone)
